@@ -4,7 +4,7 @@ app = Flask(__name__)
  
 @app.route('/jmp_address',methods=['POST'])
 def test():
-    # {'offset':jmp指令的偏移量, 'jmp_offset':jmp指令跳转的地址偏移量}
+    # {"offset":jmp指令的偏移量, "jmp_offset":jmp指令跳转的地址偏移量}
     temp_json = json.loads(request.data.decode('utf-8'))
     offset = temp_json['offset']
     jmp_offset = temp_json['jmp_offset']
