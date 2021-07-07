@@ -1,7 +1,13 @@
 from flask import Flask,request
 import json
 app = Flask(__name__)
+
+def ee():
+    with open("offset_jmp_already.json","w",encoding="utf-8") as f:
+        f.write("[]")
  
+ee()
+
 @app.route('/jmp_address',methods=['GET'])
 def test():
     offset = request.args.get("offset")
@@ -15,7 +21,8 @@ def test():
 
 @app.route('/jmp_offset_file_path',methods=['GET'])
 def file_path():
-    default_path = "F:\\x64dbg_2021_03_12\\release\\x64\\plugins\\offset_jmp.json"
+    ee()
+    default_path = "D:\\jmp_files\\offset_jmp_2.json"
     return default_path
     
 if __name__ == '__main__':
